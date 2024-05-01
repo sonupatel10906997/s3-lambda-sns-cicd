@@ -63,5 +63,3 @@ def lambda_handler(event, context):
                            Message= errormessage, \
                            Subject="Task | process raw orders json | Failed" \
                             )
-        
-        
