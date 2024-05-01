@@ -27,8 +27,7 @@ phases:
           --action "lambda:InvokeFunction" \
           --principal s3.amazonaws.com \
           --source-arn arn:aws:s3:::doordash-landing-growskills-zn \
-          --source-account 975049912631 \
-          --source-region us-east-2 \
+          --source-account 975049912631
       - |
         aws s3api put-bucket-notification-configuration \
           --bucket doordash-landing-growskills-zn \
