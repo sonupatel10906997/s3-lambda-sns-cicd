@@ -31,12 +31,13 @@ phases:
       - |
         aws s3api put-bucket-notification-configuration \
           --bucket doordash-landing-growskills-zn \
-          --notification-configuration '{
+          --notification-configuration \
+          '{
             "LambdaFunctionConfigurations": [
               {
                 "LambdaFunctionArn": "arn:aws:lambda:us-east-2:975049912631:function:s3-read-lambda-ontrigger-sns",
                 "Events": ["s3:ObjectCreated:*"]
               }
             ]
-          }' \
+          }'
       - echo "Deployment complete!!"
