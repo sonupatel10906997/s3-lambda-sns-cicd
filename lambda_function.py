@@ -4,6 +4,10 @@ import pandas as pd
 import io
 import os
 from datetime import datetime
+from dotenv import load_dotenv
+
+#loading variables from .env file
+load_dotenv()
 
 def lambda_handler(event, context):
     # TODO implement
