@@ -23,8 +23,8 @@ phases:
       - echo " removing existing S3EventTrigger to remove conflicts while building..."
       - |
         aws lambda remove-permission \
-        -- function-name s3-read-lambda-ontrigger-sns \
-        -- statement-id S3EventTrigger
+        --function-name s3-read-lambda-ontrigger-sns \
+        --statement-id S3EventTrigger
       - |
         aws lambda add-permission \
           --function-name s3-read-lambda-ontrigger-sns \
