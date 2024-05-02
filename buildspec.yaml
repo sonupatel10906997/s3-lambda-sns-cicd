@@ -20,6 +20,11 @@ phases:
       - aws s3 cp deployment_package.zip s3://github-s3-source-code-cicd/
       - echo "Updating lambda function via S3..."
       - aws lambda update-function-code --function-name s3-read-lambda-ontrigger-sns --s3-bucket github-s3-source-code-cicd --s3-key deployment_package.zip
+      - echo " removing existing S3EventTrigger to remove conflicts while building..."
+      - |
+        aws lambda remove-permission \
+        -- function-name s3-read-lambda-ontrigger-sns \
+        -- statement-id S3EventTrigger
       - |
         aws lambda add-permission \
           --function-name s3-read-lambda-ontrigger-sns \
